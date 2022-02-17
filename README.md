@@ -1,10 +1,10 @@
-# Zadanie rekrutacyjne na stanowisko Backend Developer w DobryMechanik.pl
+# Zadanie rekrutacyjne na stanowisko Senior Backend Developer w DobryMechanik.pl
 
 ## Instalacja i uruchomienie
 
 1. `git clone git@github.com:dobrymechanik/recruitment-task-backend-developer.git`
 2. `cd recruitment-task-backend-developer`
-3. `git checkout mid`
+3. `git checkout senior`
 4. sprawdź czy masz wolny port 8888 lub ustaw inny wolny port w HTTP_PORT w pliku .env
 5. `make up`
 6. http://localhost:{HTTP_PORT}/
@@ -25,6 +25,24 @@
     "lead": "dane pobierz z response.docs[].lead_paragraph",
     "image": "dane pobierz z response.docs[].multimedia.subtype=\"superJumbo\"",
     "url" : "dane pobierz z response.docs[].web_url"
+  }
+]
+```
+
+- pod adresem http://localhost:{HTTP_PORT}/nytimes/{query_to_find_in_body}
+- daj możliwość dodatkowego "przefiltrowania" artykułów motoryzacyjnych do pobrania - pobierz tylko artykuły motoryzacyjne zawierające `query_to_find_in_body` w `body`
+- dostęp do tego endpointa zabezpiecz za pomocą `API-KEY`
+- listę zaprezentuj w formie następującego JSONa:
+```json
+[
+  {
+    "title": "dane pobierz z response.docs[].headline.main",
+    "publicationDate": "dane pobierz z response.docs[].pub_date",
+    "lead": "dane pobierz z response.docs[].lead_paragraph",
+    "image": "dane pobierz z response.docs[].multimedia.subtype=\"superJumbo\"",
+    "url" : "dane pobierz z response.docs[].web_url",
+    "section": "dane pobierz z response.docs[].section_name",
+    "subsection": "dane pobierz z response.docs[].subsection_name"
   }
 ]
 ```
