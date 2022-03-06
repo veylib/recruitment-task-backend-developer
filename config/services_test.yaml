@@ -1,3 +1,0 @@
-services:
-  App\Domain\NewYorkTimes\Client\ClientInterface:
-    public: true

@@ -33,9 +33,9 @@ services:
     class: Symfony\Component\Serializer\Normalizer\GetSetMethodNormalizer
     tags: [ serializer.normalizer ]
 
-  App\Domain\NewYorkTimes\Client\ClientInterface: '@domain.ny_times.client'
-  domain.ny_times.client:
+  App\Domain\NewYorkTimes\Client\ClientInterface:
     class: App\Domain\NewYorkTimes\Client\HttpClient
     arguments:
       - '@nytimes.client'
       - '%env(string:NY_TIMES_KEY)%'
+    public: true
